@@ -1,19 +1,16 @@
+# This is the address being pinged
 $DestHostname = "8.8.8.8"
+# This is the average ping one could expect from the local host to the DestHostName
 $NomalPing = 17
 
+# These values are simply to set the enviroment up
 $50PctMore = $NomalPing * 1.5
 $100PctMore = $NomalPing * 2
 $150PctMore = $NomalPing * 2.5
-$Dots = 0
-$10LineCount = 0
-$100LineCount = 0
-$LastAvgPingCalculated = $NomalPing
-$LastAvg10PingLinesCalculated = $NomalPing
-$LastAvg100PingLinesCalculated = $NomalPing
-$OverallAvgPing = $NomalPing
-$OverallAvgPingCount = 0
-cls
+$Dots = $10LineCount = $100LineCount = $OverallAvgPingCount = 0
+$LastAvgPingCalculated = $LastAvg10PingLinesCalculated = $LastAvg100PingLinesCalculated = $OverallAvgPing = $NomalPing
 
+# Just a cheezy banner
 Write-Host "  _   _ ______ _________          ______  _____  _  __ "
 Write-Host " | \ | |  ____|__   __\ \        / / __ \|  __ \| |/ / "
 Write-Host " |  \| | |__     | |   \ \  /\  / / |  | | |__) | ' /  "
