@@ -16,7 +16,7 @@
 # Determine the delay between pings in ms, 0 is none.
 [int]$InterPingDelay = 100
 # Determine if graphical display is used (uses a large amount as GPU resources below as 500ms interveral), timeouts/averages will still be shown.
-[bool]$GraphPings = $true
+[bool]$GraphPings = $false
 
 # These values are simply to set the enviroment up
 $50PctMore = $NomalPing * 1.5
@@ -88,7 +88,7 @@ while($true){
     $Ping = (New-Object System.Net.NetworkInformation.Ping).Send($DestHostname)
 
     if ($Dots -eq 0){
-        Write-Host (Get-Date -UFormat "%H:%M:%S ") -NoNewline
+        Write-Host (Get-Date -UFormat "[%d-%m-%y %H:%M:%S] ") -NoNewline
     }
     if ($Dots -lt 60){
         if (($Ping.Status) -eq "Timeout" -or ($Ping.Status) -eq "TimedOut"){
