@@ -1,6 +1,7 @@
 ### Perpouse: Test the internet connection for connection stability and latency, while logging the failures.
 ### Author: Adam T
 ### Last Modified Date: Sept 15th 2016
+### Notes: The averages may be slightly off in the inital 6000 pings due to averaging.
 
 
 #################### Variables ####################
@@ -11,7 +12,7 @@
 [int]$NomalPing = 17
 # This is the location of the logging folder.
 [string]$LoggingFolder = "C:\Temp"
-# Determine if logging is needed.
+# Determine if logging is needed, will log timeouts and the 100 line average (every 6000 pings)
 [bool]$LoggingEnabled = $true
 # Determine the delay between pings in ms, 0 is none.
 [int]$InterPingDelay = 100
