@@ -17,7 +17,7 @@
 # Determine the delay between pings in ms, 0 is none.
 [int]$InterPingDelay = 100
 # Determine if graphical display is used (uses a large amount as GPU resources below as 500ms interveral), timeouts/averages will still be shown.
-[bool]$GraphPings = $false
+[bool]$GraphPings = $true
 
 # Remove averaging variables from possible previous session
 Remove-Variable LastAvgPingCalculated,LastAvg10PingLinesCalculated,LastAvg100PingLinesCalculated,OverallAvgPing -ErrorAction SilentlyContinue
