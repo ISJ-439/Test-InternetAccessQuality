@@ -161,7 +161,7 @@ while($true){
     if ($100LineCount -eq 100){
         $Avg100PingLinesCalculated = ([math]::Round(($Avg100PingLines/100),3))
         Write-Host "100 Line Average Change = " -NoNewline -ba Black -fo Yellow
-        OutputToLog("100 Line Average $Avg100PingLines")
+        OutputToLog("100 Line Average $Avg100PingLinesCalculated ms")
         if ($Avg100PingLinesCalculated -le ($LastAvg100PingLinesCalculated)){
             $100PingChangeAmt = ([math]::Round(($Avg100PingLinesCalculated-$LastAvg100PingLinesCalculated),3))
             Write-Host $100PingChangeAmt -ba Black -fo Green -NoNewline
