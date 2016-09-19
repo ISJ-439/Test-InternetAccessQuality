@@ -17,7 +17,7 @@
 # Determine the delay between pings in ms, 0 is none.
 [int]$InterPingDelay = 100
 # Determine if graphical display is used (uses a large amount as GPU resources below as 500ms interveral), timeouts/averages will still be shown.
-[bool]$GraphPings = $false
+[bool]$GraphPings = $true
 
 # These values are simply to set the enviroment up
 $50PctMore = $NomalPing * 1.5
