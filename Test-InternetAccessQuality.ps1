@@ -25,6 +25,8 @@ $100PctMore = $NomalPing * 2
 $150PctMore = $NomalPing * 2.5
 $Dots = $10LineCount = $100LineCount = $OverallAvgPingCount = 0
 $LastAvgPingCalculated = $LastAvg10PingLinesCalculated = $LastAvg100PingLinesCalculated = $OverallAvgPing = $NomalPing
+[int]$CurrentHour = (Get-Date).Hour
+[int]$TimeoutsThisHour = 0
 
 #################### SCRIPT EXPLANATION ####################
 
@@ -93,8 +95,15 @@ while($true){
     }
     if ($Dots -lt 60){
         if (($Ping.Status) -eq "Timeout" -or ($Ping.Status) -eq "TimedOut"){
+            # Determine if the hour has changed for the Timouts per hour count
+            if((Get-Date).Hour -ne $CurrentHour){
+                $TimeoutsThisHour = 0
+                $CurrentHour = (Get-Date).Hour
+            }
             Write-Host "T" -NoNewline -ba Black -fo Red
-            OutputToLog("Timeout to $DestHostname")
+            # Incriment the timeout count
+            $TimeoutsThisHour++
+            OutputToLog("Timeout to $DestHostname ($TimeoutsThisHour this hour)")
         }
         else{
             if(($Ping.RoundtripTime) -lt $NomalPing){
