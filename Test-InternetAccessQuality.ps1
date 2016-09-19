@@ -8,7 +8,7 @@
 # This is the address being pinged
 [string]$DestHostname = "8.8.8.8"
 # This is the average ping one could expect from the local host to the DestHostName.
-$NomalPing = 17
+[int]$NomalPing = 17
 # This is the location of the logging folder.
 [string]$LoggingFolder = "C:\Temp"
 # Determine if logging is needed.
@@ -16,7 +16,7 @@ $NomalPing = 17
 # Determine the delay between pings in ms, 0 is none.
 [int]$InterPingDelay = 100
 # Determine if graphical display is used (uses a large amount as GPU resources below as 500ms interveral), timeouts/averages will still be shown.
-[bool]$GraphPings = $false
+[bool]$GraphPings = $true
 
 # These values are simply to set the enviroment up
 $50PctMore = $NomalPing * 1.5
