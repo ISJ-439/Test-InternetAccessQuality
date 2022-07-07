@@ -12,10 +12,8 @@
 #################### Variables ####################
 
 # This is the address being pinged.
-#Remote site with bad connectivity, packet loss and high jitter: 
-# 103.99.174.5 (335 avg)
-#	103.99.174.24 (425 avg)
-#Rock solid ping: 8.8.8.8 (<10ms avg)
+# Remote site with bad connectivity, packet loss and high jitter: 103.99.174.5 (335 avg) or 103.99.174.24 (425 avg)
+# Rock solid ping: 8.8.8.8 (<10ms avg)
 [string]$DestHostname = "8.8.8.8"
 
 # This is the average ping one could expect from the local host to the DestHostName.
