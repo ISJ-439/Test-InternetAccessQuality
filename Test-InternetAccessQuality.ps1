@@ -183,13 +183,13 @@ while($true){
             elseif($AvgPingCalculated -ge $50PctMore -and $AvgPingCalculated -lt $100PctMore){Write-Host "$($AvgPingCalculated.ToString("0000.0"))" -NoNewline -ba Black -fo Yellow}
             elseif($AvgPingCalculated -ge $100PctMore -and $AvgPingCalculated -lt $150PctMore){Write-Host "$($AvgPingCalculated.ToString("0000.0"))" -NoNewline -ba Black -fo Red}
             elseif($AvgPingCalculated -ge $150PctMore){Write-Host "$($AvgPingCalculated.ToString("0000.0"))" -NoNewline -ba Black -fo Magenta}
-        Write-Host "  `t`t(" -NoNewline
+        Write-Host "  `t(" -NoNewline
 
         # If average line ping is lower or equal to last average line ping.
         if ($AvgPingCalculated -le ($LastAvgPingCalculated)){
             $PingChangeAmt = ([math]::Round(($AvgPingCalculated-$LastAvgPingCalculated),1))
             Write-Host $PingChangeAmt.ToString("0000.0") -ba Black -fo Green -NoNewline
-            Write-Host "ms)   `t`t[Max Ping:" -NoNewline
+            Write-Host "ms)   `t[Max Ping:" -NoNewline
             # Indicate Max Ping
             if($LineMaxPing -lt $NomalPing){Write-Host "$($LineMaxPing.ToString("0000.0"))" -NoNewline -ba Black -fo Green}
                 elseif($LineMaxPing -ge $NomalPing -and $LineMaxPing -lt $50PctMore){Write-Host "$($LineMaxPing.ToString("0000.0"))" -NoNewline -ba Black -fo White}
@@ -204,7 +204,7 @@ while($true){
         if ($AvgPingCalculated -gt ($LastAvgPingCalculated)){
             $PingChangeAmt = ([math]::Round(($AvgPingCalculated-$LastAvgPingCalculated),1))
             Write-Host "+$($PingChangeAmt.ToString("0000.0"))" -ba Black -fo Red -NoNewline
-            Write-Host "ms)   `t`t[Max Ping:" -NoNewline
+            Write-Host "ms)   `t[Max Ping:" -NoNewline
             # Indicate Max Ping
             if($LineMaxPing -lt $NomalPing){Write-Host "$($LineMaxPing.ToString("0000.0"))" -NoNewline -ba Black -fo Green}
                 elseif($LineMaxPing -ge $NomalPing -and $LineMaxPing -lt $50PctMore){Write-Host "$($LineMaxPing.ToString("0000.0"))" -NoNewline -ba Black -fo White}
